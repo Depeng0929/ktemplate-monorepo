@@ -1,0 +1,12 @@
+{
+  "env": {
+    "node": true,
+    "cypress/globals": true
+  },
+  "globals": {
+    "__DEV__": true
+  },
+  "extends": ["@depeng9527/eslint-config"],
+  "plugins": ["cypress"],
+  "rules": {}
+}
