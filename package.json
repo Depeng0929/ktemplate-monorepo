@@ -2,36 +2,37 @@
   "name": "name",
   "version": "2.2.3",
   "description": "Personal tools",
-  "keywords": [
-    "tools"
-  ],
-  "license": "MIT",
   "author": "Depeng0929 <15365182986@163.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/Depeng0929",
+  "homepage": "https://github.com/Depeng0929/[name]#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Depeng0929/[name].git"
   },
-  "funding": "https://github.com/sponsors/Depeng0929",
+  "bugs": {
+    "url": "https://github.com/Depeng0929/[name]/issues"
+  },
+  "keywords": [
+    "tools"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "files": [
     "dist",
     "*.d.ts"
   ],
-  "sideEffects": false,
-  "bugs": {
-    "url": "https://github.com/Depeng0929/[name]/issues"
-  },
-  "homepage": "https://github.com/Depeng0929/[name]#readme",
   "scripts": {
+    "clean": "rimraf -rf packages/*/node_modules",
     "dev": "pnpm -r --filter ./packages --parallel run dev",
     "build": "pnpm -r --filter ./packages run build",
     "release": "zx scripts/release.mjs",
