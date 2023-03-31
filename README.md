@@ -9,3 +9,28 @@
   "@slidev/parser/fs": ["./packages/parser/src/fs.ts"],
 }
 ```
+
+3. config sub package.json, add devDependencies
+
+```ts
+"@slidev/cli": "workspace:*",
+```
+
+
+4. config
+
+```json
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts",
+    "dev": "nr build --watch",
+    "prepublishOnly": "npm run build"
+  }
+```
+
