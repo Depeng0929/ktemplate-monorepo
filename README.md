@@ -17,8 +17,7 @@
 ```
 
 
-4. config
-
+4. config types sub
 ```json
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -33,4 +32,6 @@
     "prepublishOnly": "npm run build"
   }
 ```
+
+5. delete sub .eslintrc and package.json eslint dependencies
 
