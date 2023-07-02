@@ -12,3 +12,5 @@ compiled
 docs
 *-lock.json
 .*cache
+packages/*
+apps/*

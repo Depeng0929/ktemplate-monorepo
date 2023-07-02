@@ -1,0 +1,29 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".nuxt/**", ".output/**"]
+    },
+    "test": {
+      "outputs": []
+    },
+    "lint": {
+      "outputs": []
+    },
+    "stub": {
+      "cache": false
+    },
+    "dev": {
+      "dependsOn": ["css-preset#stub"],
+      "cache": false
+    },
+    "start": {
+      "dependsOn": ["build"]
+    },
+    "typecheck": {
+      "outputs": []
+    }
+  },
+  "globalDependencies": ["pnpm-lock.yaml"]
+}

@@ -1,6 +1,7 @@
 {
   "name": "name",
   "version": "2.2.3",
+  "packageManager": "pnpm@8.6.5",
   "description": "Personal tools",
   "author": "Depeng0929 <15365182986@163.com>",
   "license": "MIT",
@@ -15,15 +16,15 @@
   },
   "scripts": {
     "clean": "rimraf -rf packages/*/node_modules && pnpm install",
-    "dev": "pnpm -r --filter=./packages/** --parallel run dev",
-    "build": "pnpm -r --filter=./packages/** run build",
+    "dev": "turbo run dev --parallel",
+    "dev:apps": "turbo run dev --parallel --filter='./apps/*'",
+    "dev:h5": "turbo run dev --filter h5",
+    "build": "turbo run build",
+    "lint": "turbo run lint --fix",
+    "typecheck": "turbo run typecheck",
     "update:tag": "zx scripts/update-versions.mjs",
     "ci:publish": "zx scripts/publish.mjs",
-    "pc:dev": "pnpm -C packages/pc run dev",
-    "test": "vitest test",
-    "coverage": "vitest run --coverage",
-    "lint": "eslint .",
-    "lint:fix": "pnpm lint --fix"
+    "test": "pnpm test --filter vitest"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.3",
@@ -37,11 +38,8 @@
     "nodemon": "^2.0.22",
     "pnpm": "^8.5.1",
     "rimraf": "^5.0.1",
-    "tsup": "^6.7.0",
+    "turbo": "^1.10.7",
     "typescript": "^5.0.4",
-    "vite": "^4.3.8",
-    "vite-plugin-windicss": "^1.9.0",
-    "vitest": "^0.31.1",
     "zx": "^7.2.2"
   }
 }
