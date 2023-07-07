@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "display": "Vite",
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "types": [
+      "unplugin-vue-define-options",
+      "vite-plugin-vue-layouts/client",
+      "vite/client"
+    ]
+  }
+}

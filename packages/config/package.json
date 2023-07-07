@@ -1,0 +1,30 @@
+{
+  "name": "config",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+    "build": "rimraf dist && tsup src/index.ts",
+    "stub": "nr build --watch"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "tsup": "^7.0.0",
+    "vite": "4.3.9"
+  }
+}

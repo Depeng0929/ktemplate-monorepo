@@ -15,7 +15,7 @@
       "cache": false
     },
     "dev": {
-      "dependsOn": ["css-preset#stub"],
+      "dependsOn": ["config#stub"],
       "cache": false
     },
     "start": {
