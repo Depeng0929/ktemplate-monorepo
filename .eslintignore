@@ -1,5 +1,8 @@
 dist
+.turbo
+.output
 node_modules
 public
 !.vitepress
 temp
+mock

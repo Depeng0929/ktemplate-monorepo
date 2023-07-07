@@ -1,10 +1,7 @@
 {
-  "env": {
-    "node": true
-  },
-  "globals": {
-    "__DEV__": true
-  },
-  "extends": ["@antfu"],
-  "rules": {}
+  "root": true,
+  "extends": "@antfu",
+  "overrides": [
+  ]
 }
+
