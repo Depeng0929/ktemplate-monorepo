@@ -5,16 +5,14 @@
   "author": "Depeng0929 <15365182986@163.com>",
   "scripts": {
     "clean": "rimraf {apps,packages/*}/node_modules && pnpm install",
-    "dev": "turbo run dev --parallel",
-    "dev:apps": "pnpm -r --filter=./packages/** --parallel run dev",
-    "dev:h5": "pnpm -C packages/h5 run dev",
-    "dev:admin": "pnpm -C packages/admin run dev",
-    "build": "turbo run build",
-    "lint": "turbo run lint --fix",
-    "typecheck": "turbo run typecheck",
+    "dev": "pnpm -r --filter=./apps/** --parallel run dev",
+    "dev:h5": "pnpm -C apps/h5 run dev",
+    "dev:admin": "pnpm -C apps/admin run dev",
+    "build": "pnpm -r --filter=./apps/** run build",
+    "lint": "pnpm -r --filter=./apps/** run lint --fix",
+    "typecheck": "pnpm -r --filter=./apps/** run typecheck",
     "update:tag": "zx scripts/update-versions.mjs",
-    "ci:publish": "zx scripts/publish.mjs",
-    "test": "pnpm test --filter vitest"
+    "ci:publish": "zx scripts/publish.mjs"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.7",
