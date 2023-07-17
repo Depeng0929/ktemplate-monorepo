@@ -1,24 +1,14 @@
 {
   "name": "name",
   "version": "2.2.3",
-  "packageManager": "pnpm@8.6.5",
-  "description": "Personal tools",
+  "packageManager": "pnpm@8.6.1",
   "author": "Depeng0929 <15365182986@163.com>",
-  "license": "MIT",
-  "funding": "https://github.com/sponsors/Depeng0929",
-  "homepage": "https://github.com/Depeng0929/[name]#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Depeng0929/[name].git"
-  },
-  "bugs": {
-    "url": "https://github.com/Depeng0929/[name]/issues"
-  },
   "scripts": {
-    "clean": "rimraf -rf packages/*/node_modules && pnpm install",
+    "clean": "rimraf {apps,packages/*}/node_modules && pnpm install",
     "dev": "turbo run dev --parallel",
-    "dev:apps": "turbo run dev --parallel --filter='./apps/*'",
-    "dev:h5": "turbo run dev --filter h5",
+    "dev:apps": "pnpm -r --filter=./packages/** --parallel run dev",
+    "dev:h5": "pnpm -C packages/h5 run dev",
+    "dev:admin": "pnpm -C packages/admin run dev",
     "build": "turbo run build",
     "lint": "turbo run lint --fix",
     "typecheck": "turbo run typecheck",
@@ -27,18 +17,17 @@
     "test": "pnpm test --filter vitest"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.39.3",
-    "@types/jest": "^29.5.1",
-    "@types/node": "^20.2.3",
-    "@typescript-eslint/eslint-plugin": "^5.59.7",
-    "bumpp": "^9.1.0",
+    "@antfu/eslint-config": "^0.39.7",
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "bumpp": "^9.1.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.41.0",
-    "eslint-plugin-jest": "^27.2.1",
-    "nodemon": "^2.0.22",
+    "eslint": "^8.44.0",
+    "eslint-plugin-jest": "^27.2.2",
+    "nodemon": "^3.0.1",
     "rimraf": "^5.0.1",
-    "turbo": "^1.10.7",
-    "typescript": "^5.0.4",
-    "zx": "^7.2.2"
+    "typescript": "^5.1.6",
+    "zx": "^7.2.3"
   }
 }
