@@ -8,7 +8,7 @@
     "dev": "pnpm -r --filter=./apps/** --parallel run dev",
     "dev:h5": "pnpm -C apps/h5 run dev",
     "dev:admin": "pnpm -C apps/admin run dev",
-    "build": "pnpm -r --filter=./apps/** run build",
+    "build": "pnpm -r --filter=./apps/** run build --mode production",
     "lint": "pnpm -r --filter=./apps/** run lint --fix",
     "typecheck": "pnpm -r --filter=./apps/** run typecheck",
     "update:tag": "zx scripts/update-versions.mjs",
